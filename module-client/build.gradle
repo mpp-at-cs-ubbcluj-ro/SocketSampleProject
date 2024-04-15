@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'ro.ubb'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation project(":module-commons")
+}
+
+//this is needed for Scanner to work with application->run from gradle
+run {
+    standardInput = System.in
+}
+
+application {
+    mainClass = 'ro.ubb.Main'
+}
+
+test {
+    useJUnitPlatform()
+}

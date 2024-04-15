@@ -1,0 +1,5 @@
+rootProject.name = 'SocketSampleProject'
+include 'module-server'
+include 'module-client'
+include 'module-commons'
+
